@@ -61,22 +61,25 @@
     <header class="header-image">
         <div class="headline">
             <div class="container">
-              <h3>Esses são os focos de dengue próximo a você.</h3>
-              <div ng-controller="ListarFocoController"  id="map-container">
-                <div id="map" ng-init="carregar()"></div>
-                <div class="form-group">
+              <h3 class="title-chamada">Esses são os focos de dengue próximo a você.</h3>
+               <div class="form-group">
                   <div ng-controller="ListarLocaisController">
                     <form name="myForm" class="mapa">
-                      <label for="mySelect" class="escolha-regiao">Escolha uma Região:</label>
+                      <label for="mySelect" class="escolha-regiao">Você também pode visualizar somente a região que você deseja:</label>
+                      <label>
                       <select
                         name="ddlSelectRegion" id="ddlSelectRegion"
                         ng-model="data.selectedOption"
                         ng-options="option.title for option in data.availableOptions"
                         ng-change="selectCity(option)">
                       </select>
+                      </label>
                     </form>
                     </div>
                 </div>
+              <div ng-controller="ListarFocoController"  id="map-container">
+                <div id="map" ng-init="carregar()"></div>
+
               </div>
             </div>
         </div>

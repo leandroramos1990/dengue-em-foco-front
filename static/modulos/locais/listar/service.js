@@ -50,7 +50,7 @@ angular.module('dengue.locais').factory('locais', function($http){
 
 
           var siteUrl= 	"https://s3.amazonaws.com/dengueemfoco/";
-          var content = "<h3 class='iw-title'>" + foco.title +  "</h3>" + '<div id="descricao"> <h6>'  + foco.description + "</h6> </div>" +  '<br><IMG  class="alinhar-imagem" SRC='+siteUrl+foco.photoUrl+'>'
+          var content = "<h3 class='iw-title'>" + foco.title +  "</h3>" + '<div id="descricao"> <h6>'  + foco.description + "</h6> </div>" +  '<br><IMG  class="alinhar-imagem thumbnail" SRC='+siteUrl+foco.photoUrl+'>'
           markers.push(marker);
           google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
               return function() {

@@ -10,6 +10,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 p, div {
     font-family: 'Roboto', sans-serif;
@@ -30,7 +31,7 @@ p, div {
 }
 
 .headline {
-    padding: 120px 0;
+    padding: 70px 0;
 }
 
 .headline h1 {

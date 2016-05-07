@@ -1,8 +1,15 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
+   
 }
 p, div {
     font-family: 'Roboto', sans-serif;
+}
+.title-chamada{
+  font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 
 }
 
 #map-container {
@@ -26,15 +33,22 @@ h3.title-foco{
     width:100%!important;
 }
 #descricao{
-    width: 50%;
+    width: 60%;
     float: left;
     margin-top: 17px;
     text-align: left;
     margin-left: 4px;
+    
+}
+#descricao h6{
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #666;
+  padding-left: 5px;
 }
 img.alinhar-imagem{
-    width:150px;
-    height: 150px;
+    width:120px;
+    height: 120px;
     float: right;
     margin-right: 4px;
     margin-bottom: 4px;
@@ -43,7 +57,7 @@ img.alinhar-imagem{
 }
 .iw-title {
    font-family: 'Roboto', sans-serif !important;
-   font-size: 22px;
+   font-size: 16px;
    font-weight: 400;
    padding: 10px;
    background-color: #48b5e9;
@@ -59,7 +73,7 @@ img.alinhar-imagem{
    background-color: #fff;
    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
    border: 1px solid rgba(72, 181, 233, 0.6);
-   border-radius: 2px 2px 10px 10px; // apply 10px to the bottom corners of the infowindow
+   border-radius: 5px 5px 10px 10px; // apply 10px to the bottom corners of the infowindow
 }
 
 /* white background and box outline */
@@ -75,7 +89,7 @@ img.alinhar-imagem{
 /* arrow colour */
 .gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div > div > div
 {
-    background-color: #003366 !important; 
+    background-color: #fff !important; 
 }
 
 /* close button */
@@ -96,16 +110,81 @@ img.alinhar-imagem{
 {
     top: 22px !important;
     left: 22px !important;
+    border: 0;
 }
 .gm-style-iw > div{
-    
     width: 100%;
 }
-.escolha-regiao{
-    margin-top: 30px;
+.container .escolha-regiao{
+    margin-top: 15px;
     font-family: 'Roboto', sans-serif !important;
+    font-size: 15px;
+    color: #333 !important;
+    font-weight: 300;
+    position: inherit;
+    margin-right: 20px;
+    text-transform: uppercase;
 }
 .mapa select{
     height: 30px;
     font-family: 'Roboto', sans-serif !important;
+    padding-left: 10px;
+}
+
+
+/* The CSS */
+select {
+    padding:3px;
+    margin: -4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#999;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    font-weight: 400;
+     font-family: 'Roboto', sans-serif !important;
+}
+select option{
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+
+label {position:relative}
+label:after {
+    content:'<>';
+    font:11px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+label:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:20px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
 }
