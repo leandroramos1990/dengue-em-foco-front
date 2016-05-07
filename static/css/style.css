@@ -1,0 +1,111 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+p, div {
+    font-family: 'Roboto', sans-serif;
+}
+
+#map-container {
+    padding: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc #ccc #999 #ccc;
+    -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+    -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+    box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+h3.title-foco{
+    background-color: #550000;
+    color: #fff;
+    width:100%!important;
+}
+#descricao{
+    width: 50%;
+    float: left;
+    margin-top: 17px;
+    text-align: left;
+    margin-left: 4px;
+}
+img.alinhar-imagem{
+    width:150px;
+    height: 150px;
+    float: right;
+    margin-right: 4px;
+    margin-bottom: 4px;
+
+    
+}
+.iw-title {
+   font-family: 'Roboto', sans-serif !important;
+   font-size: 22px;
+   font-weight: 400;
+   padding: 10px;
+   background-color: #48b5e9;
+   color: white;
+   margin: 0px;
+   border-radius: 2px 2px 2px 2px; /* In accordance with the rounding of the default infowindow corners. */
+}
+
+.gm-style-iw {
+   width: 350px !important;
+   top: 15px !important;
+   left: 0 !important;
+   background-color: #fff;
+   box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+   border: 1px solid rgba(72, 181, 233, 0.6);
+   border-radius: 2px 2px 10px 10px; // apply 10px to the bottom corners of the infowindow
+}
+
+/* white background and box outline */
+.gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div
+{
+    /* we have to use !important because we are overwritng inline styles */
+    background-color: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* arrow colour */
+.gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div > div > div
+{
+    background-color: #003366 !important; 
+}
+
+/* close button */
+.gm-style > div:first-child > div + div > div:last-child > div > div:last-child
+{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+/* image icon inside close button */
+.gm-style > div:first-child > div + div > div:last-child > div > div:last-child > img
+{
+    display: none;
+}
+
+/* positioning of infowindow */
+.gm-style-iw
+{
+    top: 22px !important;
+    left: 22px !important;
+}
+.gm-style-iw > div{
+    
+    width: 100%;
+}
+.escolha-regiao{
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif !important;
+}
+.mapa select{
+    height: 30px;
+    font-family: 'Roboto', sans-serif !important;
+}

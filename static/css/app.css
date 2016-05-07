@@ -1,0 +1,31 @@
+.navbar-inverse {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+}
+.navbar-brand {
+  float: left;
+  height: 115px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+    height: 50px;
+    margin-top: 40px;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color:#585252!important;
+  }
+  .navbar-nav > li > a:hover {
+    color:#000!important;
+  }
+}

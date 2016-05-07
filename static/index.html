@@ -1,0 +1,165 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<title>Dengue em Foco</title>
+
+    <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+    <!-- Custom CSS -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <!--font roboto-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ7NCb9Pbw7F39VhohYtdKFP4yA5PL3Mk"></script>
+    <script type="text/javascript" src="js/markerclusterer.js"></script>
+<!-- Dengue-->
+  </head>
+
+  <body ng-app="dengue">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+                                        <!-- ***** Definindo o Controller -->
+        <div class="container" >
+        <!--<a class="navbar-brand" href="#" ng-click="carregar()" ><img src="img/logo.png"</a>-->
+        <a class="navbar-brand" href="#"><img src="img/logo.png"</a>
+
+            <!-- Brand and toggle get  grouped for better mobile display -->
+            <div class="navbar-header">
+
+               
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a ng-href="#about" target="_self">Dicas de Prevenção</a>
+                    </li>
+                    <li>
+                        <a ng-href="#services" target="_self">Baixe já</a>
+                    </li>
+                   <!--<li>
+                        <a href="#contact">Contact</a>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+              <h3>Esses são os focos de dengue próximo a você.</h3>
+              <div ng-controller="ListarFocoController"  id="map-container">
+                <div id="map" ng-init="carregar()"></div>
+                <div class="form-group">
+                  <div ng-controller="ListarLocaisController">
+                    <form name="myForm" class="mapa">
+                      <label for="mySelect" class="escolha-regiao">Escolha uma Região:</label>
+                      <select
+                        name="ddlSelectRegion" id="ddlSelectRegion"
+                        ng-model="data.selectedOption"
+                        ng-options="option.title for option in data.availableOptions"
+                        ng-change="selectCity(option)">
+                      </select>
+                    </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="img/mosquito.jpg">
+            <h2 class="featurette-heading">Dicas
+                <span class="text-muted">de prevenção</span>
+            </h2>
+            <ol>
+                <li>Evitar água parada.</li>
+                <li>Sempre que possível, esvaziar e escovar as paredes internas de recipientes que acumulam água.</li>
+                <li>Manter totalmente fechadas cisternas, caixas d’água e reservatórios provisórios tais como tambores e barris.</li>
+                <li>Furar pneus e guardá-los em locais protegidos das chuvas.</li>
+                <li>Guardar latas e garrafas emborcadas para não reter água.</li>
+                <li>Limpar periodicamente, calhas de telhados, marquises e rebaixos de banheiros e cozinhas, não permitindo o acúmulo de água.</li>
+               <li>Jogar quinzenalmente desinfetante nos ralos externos das edificações e nos internos pouco utilizados.</li>
+               <li>Drenar terrenos onde ocorra formação de poças.</li>
+               <li>Não acumular latas, pneus e garrafas.</li>
+                <li>Encher com areia ou pó de pedra poços desativados ou depressões de terreno.</li>
+                <li>Manter fossas sépticas em perfeito estado de conservação e funcionamento.</li>
+                <li>Colocar peixes barrigudinhos em charcos, lagoa ou água que não possa ser drenada.</li>
+                <li>Não despejar lixo em valas, valetas, margens de córregos e riachos, mantendo-os desobstruídos.</li>
+                <li>Manter permanentemente secos, subsolos e garagens.</li>
+                <li>Não cultivar plantas aquática</li>
+            </ol>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image  img-responsive pull-left" src="img/cel-dengue.png">
+            <h2 class="featurette-heading">Baixe já
+                <span class="text-muted">no Goole Play.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+      <!--  <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">The Third Heading
+                <span class="text-muted">Will Seal the Deal.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+-->
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    <!-- Dengue Angular -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <!-- Dengue Modulos e COntrollers-->
+    <script src="modulos/modulo.js"></script>
+    <script src="modulos/foco/modulo.js"></script>
+    <script src="modulos/foco/listar/service.js"></script>
+    <script src="modulos/foco/listar/controller.js"></script>
+    <script src="modulos/locais/modulo.js"></script>
+    <script src="modulos/locais/listar/service.js"></script>
+    <script src="modulos/locais/listar/controller.js"></script>
+
+  </body>
+</html>

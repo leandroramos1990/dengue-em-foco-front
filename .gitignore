@@ -1,0 +1,5 @@
+/node_modules/**
+/static/libs/
+/static/js/node_modules/**
+/js/node_modules/**
+/.settings/**
