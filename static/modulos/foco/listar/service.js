@@ -6,6 +6,12 @@ angular.module('dengue.focos').factory('focos', function($http){
     return $http.get(url)
   };
 
+function contar(){
+    var url = "https://dengue-em-foco.herokuapp.com/api/markers/contar";
+    console.log($http.get(url));
+    return 
+  };
+
   function setCurrentPosition(map){
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -73,6 +79,7 @@ angular.module('dengue.focos').factory('focos', function($http){
 
   return {
     carregar:carregar,
-    setMarkers:setMarkers
+    setMarkers:setMarkers,
+    contar:contar
   }
 });
