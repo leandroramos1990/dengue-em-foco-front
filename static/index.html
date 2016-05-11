@@ -60,10 +60,11 @@
     <!-- Full Width Image Header -->
     <header class="header-image">
         <div class="headline">
-            <div class="container">
-              <h3 class="title-chamada">Esses são os focos de dengue próximo a você <span {contar()}></span>.</h3>
+        <div class="container">
+            <div ng-controller="ListarLocaisController">
+              <h3 class="title-chamada">Existem <span id="qtdFocos"></span> focos de dengue próximo a você .</h3>
                <div class="form-group">
-                  <div ng-controller="ListarLocaisController">
+               
                     <form name="myForm" class="mapa">
                       <label for="mySelect" class="escolha-regiao">Você também pode visualizar somente a região que você deseja:</label>
                       <label>
@@ -127,19 +128,6 @@
         </div>
 
         <hr class="featurette-divider">
-
-        <!-- Third Featurette -->
-      <!--  <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">The Third Heading
-                <span class="text-muted">Will Seal the Deal.</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
--->
-        <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">

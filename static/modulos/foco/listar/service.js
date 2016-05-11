@@ -8,8 +8,7 @@ angular.module('dengue.focos').factory('focos', function($http){
 
 function contar(){
     var url = "https://dengue-em-foco.herokuapp.com/api/markers/contar";
-    console.log($http.get(url));
-    return 
+    return $http.get(url)
   };
 
   function setCurrentPosition(map){
