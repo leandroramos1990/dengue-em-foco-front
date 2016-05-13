@@ -1,12 +1,28 @@
 
 angular.module('dengue.focos').factory('focos', function($http){
+  var map = document.getElementById("map");     
+ 
+  map.onclick = function fun() {
+      var infoWindow = document.getElementsByClassName("gm-style-iw");
 
+      if(infoWindow.length > 0){
+         var title = document.getElementsByClassName("iw-title");  
+         if(title.length > 0){
+             jQuery(title).append("<span></span>");
+             jQuery(title).click(function(){
+                 jQuery(infoWindow).parent().hide();  
+             });
+         }
+      }
+  }
+  
+  
   function carregar(){
     var url = "https://dengue-em-foco.herokuapp.com/api/markers/listar";
     return $http.get(url)
   };
 
-function contar(){
+  function contar(){
     var url = "https://dengue-em-foco.herokuapp.com/api/markers/contar";
     return $http.get(url)
   };
