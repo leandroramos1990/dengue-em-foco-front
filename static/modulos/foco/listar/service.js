@@ -69,7 +69,38 @@ function contar(){
         map.panTo(marker.position);
         map.setZoom(12);
     }
-    var markerCluster = new MarkerClusterer(map, markers);
+    //set style options for marker clusters (these are the default styles)
+    mcOptions = {
+      styles:
+      [{
+          height: 53,
+          url: "https://s3.amazonaws.com/dengue-em-foco-web/img/clustermarkers/m1.png",
+          width: 53
+          },
+          {
+          height: 56,
+          url: "https://s3.amazonaws.com/dengue-em-foco-web/img/clustermarkers/m2.png",
+          width: 56
+          },
+          {
+          height: 66,
+          url: "https://s3.amazonaws.com/dengue-em-foco-web/img/clustermarkers/m3.png",
+          width: 66
+          },
+          {
+          height: 78,
+          url: "https://s3.amazonaws.com/dengue-em-foco-web/img/clustermarkers/m4.png",
+          width: 78
+          },
+          {
+          height: 90,
+          url: "https://s3.amazonaws.com/dengue-em-foco-web/img/clustermarkers/m5.png",
+          width: 90
+      }]
+    }
+
+
+    var markerCluster = new MarkerClusterer(map, markers,mcOptions);
     setCurrentPosition(map);
   }
 
