@@ -89,7 +89,7 @@ angular.module('dengue.locais').factory('locais', function($http){
           }]
         }
 
-        var markerCluster = new MarkerClusterer(map, markers);
+        var markerCluster = new MarkerClusterer(map, markers,mcOptions);
         if(loc[0] == 0 && loc[1] == 0)
         {
             setCurrentPosition(map);
