@@ -191,3 +191,10 @@ label:before {
 #qtdFocos{
   color:#8d1212;
 }
+.iw-title .close{
+  background-image: url("../img/close.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  margin:-6px;
+}
