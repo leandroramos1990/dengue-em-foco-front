@@ -22,7 +22,9 @@ angular.module('dengue.locais').controller('ListarLocaisController', function($s
             console.log(response);
             locais.setMarkers(response.data.nearestlocations, $scope.data.selectedOption.loc)
          }else{
-            alert('Nenhum foco identificado para a região de '+ $scope.data.selectedOption.title +'. RAIO de 10 KM');
+            //alert('Nenhum foco identificado para a região de '+ $scope.data.selectedOption.title +'. RAIO de 10 KM');
+            $(".alert-warning").fadeIn();
+            setTimeout(function(){ $(".alert-warning").fadeOut(); },3000);
             locais.setMarkers(response.data.nearestlocations, $scope.data.selectedOption.loc)
          }
        })
